@@ -326,7 +326,7 @@ AC_ARG_WITH(boxtype,
 	[  --with-boxtype    valid values: ufs910, ufs912, ufs913, ufs922, ufc960
                              valid values: ipbox55, ipbox99, ipbox9900, cuberevo, cuberevo_mini, cuberevo_mini2, cuberevo_mini_fta, cuberevo_250hd, cuberevo_2000hd, cuberevo_9500hd, cuberevo_3000hd
                              valid values: tf7700, fortis_hdbox, octagon1008, atevio7500, spark, spark7162, hl101, hs7110, hs7810a, hs7119, hs7819, adb_box, atemio520, atemio530, vip, homecast5101
-                             valid values: vitamin_hd5000, sagemcom88, arivalink200, fortis_dp7000],
+                             valid values: vitamin_hd5000, sagemcom88, arivalink200, fortis_dp7000, adb5800, adb2850, dsi87],
 	[case "${withval}" in
 		ufs910|ufs912|ufs913|ufs922|ufc960|ipbox55|ipbox99|ipbox9900|cuberevo|cuberevo_mini|cuberevo_mini2|cuberevo_mini_fta|cuberevo_250hd|cuberevo_2000hd|cuberevo_9500hd|cuberevo_3000hd|tf7700|fortis_hdbox|octagon1008|atevio7500|spark|spark7162|hl101|hs7110|hs7810a|hs7119|hs7819|adb_box|atemio520|atemio530|vip|homecast5101|vitamin_hd5000|sagemcom88|arivalink200|fortis_dp7000)
 			BOXTYPE="$withval"
@@ -373,6 +373,9 @@ AM_CONDITIONAL(BOXTYPE_VITAMIN_HD5000, test "$BOXTYPE" = "vitamin_hd5000")
 AM_CONDITIONAL(BOXTYPE_SAGEMCOM88, test "$BOXTYPE" = "sagemcom88")
 AM_CONDITIONAL(BOXTYPE_ARIVALINK200, test "$BOXTYPE" = "arivalink200")
 AM_CONDITIONAL(BOXTYPE_FORTIS_DP7000, test "$BOXTYPE" = "fortis_dp7000")
+AM_CONDITIONAL(BOXTYPE_ADB5800, test "$BOXTYPE" = "adb5800")
+AM_CONDITIONAL(BOXTYPE_ADB2850, test "$BOXTYPE" = "adb2850")
+AM_CONDITIONAL(BOXTYPE_DSI87, test "$BOXTYPE" = "dsi87")
 
 if test "$BOXTYPE" = "ufs910"; then
 	AC_DEFINE(HAVE_UFS910_HARDWARE, 1, [building for a ufs910])
@@ -446,6 +449,12 @@ elif test "$BOXTYPE" = "arivalink200"; then
 	AC_DEFINE(HAVE_ARIVALINK200_HARDWARE, 1, [building for a arivalink200])
 elif test "$BOXTYPE" = "fortis_dp7000"; then
 	AC_DEFINE(HAVE_FORTIS_DP7000_HARDWARE, 1, [building for a fortis_dp7000])
+elif test "$BOXTYPE" = "adb5800"; then
+	AC_DEFINE(HAVE_ADB5800_HARDWARE, 1, [building for a adb5800])
+elif test "$BOXTYPE" = "adb2850"; then
+	AC_DEFINE(HAVE_ADB2850_HARDWARE, 1, [building for a adb2850])
+elif test "$BOXTYPE" = "dsi87"; then
+	AC_DEFINE(HAVE_DSI87_HARDWARE, 1, [building for a dsi87])
 fi
 
 ])
