@@ -328,7 +328,7 @@ AC_ARG_WITH(boxtype,
                              valid values: tf7700, fortis_hdbox, octagon1008, atevio7500, spark, spark7162, hl101, hs7110, hs7810a, hs7119, hs7819, adb_box, atemio520, atemio530, vip, homecast5101
                              valid values: vitamin_hd5000, sagemcom88, arivalink200, fortis_dp7000, adb5800, adb2850, dsi87],
 	[case "${withval}" in
-		ufs910|ufs912|ufs913|ufs922|ufc960|ipbox55|ipbox99|ipbox9900|cuberevo|cuberevo_mini|cuberevo_mini2|cuberevo_mini_fta|cuberevo_250hd|cuberevo_2000hd|cuberevo_9500hd|cuberevo_3000hd|tf7700|fortis_hdbox|octagon1008|atevio7500|spark|spark7162|hl101|hs7110|hs7810a|hs7119|hs7819|adb_box|atemio520|atemio530|vip|homecast5101|vitamin_hd5000|sagemcom88|arivalink200|fortis_dp7000)
+		ufs910|ufs912|ufs913|ufs922|ufc960|ipbox55|ipbox99|ipbox9900|cuberevo|cuberevo_mini|cuberevo_mini2|cuberevo_mini_fta|cuberevo_250hd|cuberevo_2000hd|cuberevo_9500hd|cuberevo_3000hd|tf7700|fortis_hdbox|octagon1008|atevio7500|spark|spark7162|hl101|hs7110|hs7810a|hs7119|hs7819|adb_box|atemio520|atemio530|vip|homecast5101|vitamin_hd5000|sagemcom88|arivalink200|fortis_dp7000|adb5800|adb2850|dsi87)
 			BOXTYPE="$withval"
 			;;
 		*)
