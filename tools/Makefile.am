@@ -17,8 +17,7 @@ SUBDIRS = \
 	libmme_host \
 	libmmeimage \
 	ipbox_eeprom \
-	wait4button \
-	spf87hd
+	wait4button
 
 if BOXTYPE_TF7700
 SUBDIRS += \
@@ -29,4 +28,9 @@ endif
 if ENABLE_EPLAYER3
 SUBDIRS += \
 	libeplayer3
+endif
+
+if ENABLE_SPF
+SUBDIRS += \
+	spf87hd
 endif
