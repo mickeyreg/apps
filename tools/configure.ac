@@ -69,7 +69,7 @@ hotplug/Makefile
 vfdctl/Makefile
 hd-idle/Makefile
 libmme_host/Makefile
-libmmeimage/Makefile
+libmme_image/Makefile
 ipbox_eeprom/Makefile
 spf_tool/Makefile
 ])

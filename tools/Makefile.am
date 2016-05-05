@@ -15,7 +15,7 @@ SUBDIRS = \
 	vfdctl \
 	hd-idle \
 	libmme_host \
-	libmmeimage \
+	libmme_image \
 	ipbox_eeprom \
 	wait4button
 
