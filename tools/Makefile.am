@@ -32,5 +32,5 @@ endif
 
 if ENABLE_SPF
 SUBDIRS += \
-	spf87hd
+	spf_tool
 endif

@@ -71,5 +71,5 @@ hd-idle/Makefile
 libmme_host/Makefile
 libmmeimage/Makefile
 ipbox_eeprom/Makefile
-spf87hd/Makefile
+spf_tool/Makefile
 ])
