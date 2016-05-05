@@ -582,7 +582,11 @@ static void FFMPEGThread(Context_t *context)
 			long long int Subtitlepts;
 			ffmpeg_printf(100, "subtitleTrack->stream %p \n", subtitleTrack->stream);
 			Subtitlepts = calcPts(subtitleTrack->stream, packet.pts);
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+			ffmpeg_printf(20, "Packet duration %lld\n", packet.duration);
+#else
 			ffmpeg_printf(20, "Packet duration %d\n", packet.duration);
+#endif
 			if (packet.duration != 0)
 				duration = ((float)packet.duration) / 1000.0;
 			else if (((AVStream *)subtitleTrack->stream)->codec->codec_id == AV_CODEC_ID_SSA)
@@ -932,9 +936,15 @@ again:
 	if (context->playback->isHttp)
 		avContext->flags |= AVFMT_FLAG_NONBLOCK | AVIO_FLAG_NONBLOCK | AVFMT_NO_BYTE_SEEK;
 	if (context->playback->isHttp && n)
+#if (LIBAVFORMAT_VERSION_MAJOR == 57 && LIBAVFORMAT_VERSION_MINOR == 25)
+		avContext->max_analyze_duration = 1 * AV_TIME_BASE;
+	else
+		avContext->max_analyze_duration = 0;
+#else
 		avContext->max_analyze_duration2 = 1 * AV_TIME_BASE;
 	else
 		avContext->max_analyze_duration2 = 0;
+#endif
 	ret = avformat_open_input(&avContext, filename, NULL, NULL);
 	if (ret < 0)
 	{
