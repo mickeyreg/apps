@@ -32,6 +32,7 @@ install-sh
 libtool
 missing
 depcomp
+.dirstamp
 .deps/
 .libs/
 libs/libstgles/libltdl/
@@ -45,10 +46,14 @@ tools/fp_control/fp_control
 tools/gitVCInfo/gitVCInfo
 tools/hd-idle/hd-idle
 tools/hotplug/hotplug
+tools/ipbox_eeprom/eeprom
+tools/libeplayer3/eplayer3
+tools/libeplayer3/meta
 tools/showiframe/showiframe
 tools/stfbcontrol/stfbcontrol
 tools/streamproxy/streamproxy
+tools/tfd2mtd/tfd2mtd
+tools/tffpctl/tffpctl
 tools/ustslave/ustslave
 tools/vfdctl/vfdctl
 tools/wait4button/wait4button
-
