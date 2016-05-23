@@ -223,6 +223,7 @@ static tButton cButtons_LircdName[] =
 	{"KEY_PLAYPAUSE"    , "=>"  , KEY_PLAYPAUSE},
 	{"KEY_EXIT"         , "=>", KEY_EXIT},
 	{"KEY_SLEEP"        , "=>", KEY_SLEEP},
+	{"KEY_OPEN"         , "=>", KEY_OPEN},
 	{""                 , ""  , KEY_NULL},
 };
 /* fixme: move this to a structure and
@@ -337,6 +338,8 @@ static int pRead(Context_t *context)
 			{
 				printf("[LircdName RCU] EMERGENCY REBOOT !!!\n");
 				fflush(stdout);
+				system("init 6");
+				sleep(4);
 				reboot(LINUX_REBOOT_CMD_RESTART);
 				return -1;
 			}
